@@ -12,6 +12,8 @@ from colorama import Fore
 
 URL="https://slack.com/api/channels.history"
 
+regex_pattern = r'((?i)(pass|key|auth|admin))'
+
 GREEN = '\033[32m'
 BLUE = '\033[94m'
 ENDC = '\033[0m'
@@ -74,9 +76,9 @@ def time_stamper(ts):
 
 
 def regex_Search(text):
-    key_pattern = r'((?i)(pass|key|auth|admin))'
+    regex_pattern = r'((?i)(pass|key|auth|admin))'
     highlight = Fore.RED + r'\1' + Fore.RESET
-    highlighted = re.sub(key_pattern, highlight, text)
+    highlighted = re.sub(regex_pattern, highlight, text)
     return highlighted
 
 
