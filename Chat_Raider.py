@@ -12,6 +12,7 @@ from colorama import Fore
 
 URL="https://slack.com/api/channels.history"
 
+#Modify regex to highlight keywords.
 regex_pattern = r'((?i)(pass|key|auth|admin))'
 
 GREEN = '\033[32m'
