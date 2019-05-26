@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import requests
 import time
 import sys
@@ -51,14 +52,14 @@ def parse_messages(channel_list,count,api_token):
         f = codecs.open(time.strftime("%Y_%m_%d/") + id_to_name(id),'a+','utf-8')
         print GREEN + "[*] Reading messages from channel " + id_to_name(id) + "." + ENDC
         s = requests.get(URL + "?token=" + api_token + "&channel=" + id + "&count=" + str(count) + "&pretty=1")
-        history_count = count-1
+        history_count = 0
         while history_count >= 0:
             try:
                 slack_data = s.json()
                 message = slack_data["messages"][history_count]["text"]
                 time_stamp = slack_data["messages"][history_count]["ts"]
                 f.write(BLUE + "[" + time_stamper(time_stamp) + "]" + ": " + ENDC + regex_Search(message)+"\n")
-                history_count -= 1
+                history_count += 1
             except IndexError:
                 message = 'null'
                 time_stamp = 'null'
@@ -94,3 +95,4 @@ if __name__=="__main__":
     parse_messages(the_channels,count,api_token)
     print GREEN + "[!] Finished parsing. Loot saved to " + time.strftime("%Y_%m_%d/") + ENDC
     sys.exit(0)
+
