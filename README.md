@@ -10,5 +10,8 @@ Python-based tool for pulling chat history from Slack channels using a stolen AP
 
 The messages output will have time stamps and also text will be highlighted according to the regex indicated for the "regex_pattern" variable to make it easier to spot keywords when manually scrolling through messages (i.e., when you are not grepping).
 
+### Example usage and output:
+![alt text](https://github.com/Keramas/Slacker/blob/master/ExampleOutput.png?raw=true)
+
 ### Supplemental:
 Set script to run with a daily cron in order to get the most recent messages automatically and diff the output files.
