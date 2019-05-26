@@ -1,6 +1,8 @@
 # Slacker
 Python-based tool for pulling chat history from Slack channels using a stolen API token.
 
+![alt_text](https://66.media.tumblr.com/13855c78853fc97012c76ed3ffa95c32/tumblr_ooltcu7Xe51remlq3o2_500.gif)
+
 ## How to use:
 1. With the stolen API token, run the Channel_RIPper.py script to pull all of the channel IDs and names from a specific Slack group. This will output a dictionary file containing both the IDs and names of all channels.
 
